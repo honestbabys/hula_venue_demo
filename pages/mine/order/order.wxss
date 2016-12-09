@@ -1,0 +1,41 @@
+/* pages/mine/order/order.wxss */
+
+.page{
+    /*margin-top:20rpx;*/
+    height: 100%;
+}
+.order{
+    margin-bottom: 28rpx;
+    background: #ffffff;
+    padding:20rpx;
+}
+.address-state{
+    line-height: 72rpx;
+    overflow: hidden;
+}
+.state{
+    color: red;
+}
+.field{
+    display: flex;
+    flex-direction: column;
+    border-top:1px solid #ccc;
+    border-bottom:1px solid #ccc;
+}
+.sport{
+    font-weight: bold;
+    margin-top:10rpx;
+}
+text{
+    padding-top:10rpx;
+    padding-bottom:10rpx;
+    font-size:30rpx;
+}
+
+
+
+
+
+
+
+

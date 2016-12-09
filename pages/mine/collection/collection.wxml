@@ -1,0 +1,19 @@
+
+<!--pages/mine/collection/collection.wxml-->
+<import src="/pages/template/layout/venueItem/venueItem.wxml" />
+<view class="page">
+  <view class="options" bindtap="tabChange">
+    <text class="myVenue {{tabArr.headIndex=='1'?'active':''}}" data-id='1'>我的场馆</text>
+    <text class="myCourse {{tabArr.headIndex=='2'?'active':''}}" data-id='2'>我的课程</text>
+  </view>
+  <view class="allVenue {{tabArr.bodyIndex=='1'?'venueActive':''}}">
+    <view wx:for="{{venueList}}" wx:key="id" class="venue">
+      <template is="venueItem" data="{{...item}}" />
+    </view>
+  </view>
+  <view class="allVenue {{tabArr.bodyIndex=='2'?'courseActive':''}}">
+    <view wx:for="{{courseList}}" wx:key="id" class="venue">
+      <template is="venueItem" data="{{...item}}" />
+    </view>
+  </view>
+</view>

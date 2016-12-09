@@ -1,0 +1,7 @@
+<!--pages/venue/detail/detail.wxml-->
+<view class="page">
+    <text class="title">名称：{{full_name}}</text>
+    <text class="member">成员数：{{playersInfo.length}}</text>
+    <view class="logo">logo:<image src="{{logo_link}}"></image></view>
+    <text class="content">{{intro}}</text>
+</view>

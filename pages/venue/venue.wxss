@@ -1,0 +1,114 @@
+@import '/pages/template/layout/venueItem/venueItem.wxss';
+.page{
+    height: 100%;
+}
+.search{
+   display: flex;
+   flex-direction: row;   
+   background: #414450;
+   padding: 10rpx;
+}
+.search-address{
+    color:white;
+    margin-right:20rpx;
+}
+
+.search-form {
+    width:500rpx;
+    height: 50rpx;
+    position: relative;
+    background: white;
+    border-radius:20rpx;
+    padding-left: 30px; 
+}
+.search-form icon{
+    position: absolute;
+    top:6px;
+    left:8px;
+}
+.search-input{
+    font-size: 24rpx;
+    display: inline-block;
+    font-family: "微软雅黑";    
+}
+.slider-box{
+    width:100%;
+    height: 192rpx;
+}
+.slide-image{
+    width:100%;
+    height: 192rpx;
+}
+.wx-swiper-dot:before{     /* 修改圆点样式*/
+    content: ''!important;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    border: solid 1px #fff;
+    box-sizing: border-box;
+}
+.wx-swiper-dot.wx-swiper-dot-active:before{
+    content: '';
+    background-color: #039df6;
+}
+.sport-zl {
+    width:100%;
+    height: 70rpx;
+    background: #1f2024;
+    line-height: 70rpx;
+    display: flex;
+    flex-direction: row;
+}
+.sport-zl text{
+    width: 20%;
+    text-align: center;
+    font-size:28rpx;
+    color: white;
+}
+.sport-zl text.active{
+    color: #039df6;
+    background: white;
+}
+.date-time{
+    padding: 30rpx 24rpx;
+    font-size: 28rpx;
+    background: #ffffff;
+}
+.date-time .date{
+    height: 90rpx;
+    line-height: 90rpx;
+    border-bottom:1px dashed #888888;
+    position: relative;
+}
+.date-time .date image,.date-time .time image{
+    width:56rpx;
+    height: 56rpx;
+    position: absolute;
+    top:22rpx;
+    right: 10rpx;
+}
+.date-time .time{
+    height: 90rpx;
+    line-height: 90rpx;
+    position: relative;
+}
+
+.allVenue .title{
+    padding:10rpx 0 10rpx 15rpx;
+    font-size:30rpx;
+}
+/*.allVenue .venue.recommend{
+    background:#ffffff url(../../images/icon_best.png) no-repeat right top;    小程序中使用背景图真机显示不了，坑
+}*/
+.allVenue .tuijian{
+    display: none;
+}
+.allVenue .recommend{
+    display: block;
+    position: absolute;
+    right:0;
+    top:0;
+    width:64rpx;
+    height: 64rpx;
+}

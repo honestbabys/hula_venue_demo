@@ -1,0 +1,81 @@
+
+
+.userinfo{
+    display: flex;
+    flex-direction: row;
+    padding:26rpx;
+    background: #039df6 url(../../images/icon_name_normal@2x.png) no-repeat right center;
+}
+.userinfo image{
+    width:120rpx;
+    height:120rpx;
+}
+.userinfo .info{
+    display: flex;
+    flex-direction: column;
+    margin-left: 30rpx;
+}
+.userinfo text{
+    color: white;
+    font-size:30rpx;
+    line-height: 60rpx;
+}
+.collection{
+    display: flex;
+    flex-direction: row;
+    padding:20rpx;
+    background: white;
+}
+.collection .item{
+    width:33.3%;
+    height: 92rpx;
+    box-sizing: border-box;
+    border-right: 1px solid #ccc;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+.collection .item:last-child{
+    border-right:none;
+}
+.collection .item image{
+    width:60rpx;
+    height:50rpx;
+    margin:0 auto;
+}
+.collection .item text{
+    font-size:26rpx;
+}
+.features{
+    margin-top:30rpx;
+    margin-bottom:30rpx;
+    background: white;
+    padding:0 20rpx;
+}
+.features .item{
+    font-size: 30rpx;
+    line-height: 82rpx;
+    border-bottom: 1px solid #ccc;
+    position: relative;
+}
+.features .item image{
+    width:48rpx;
+    height:48rpx;
+    position: absolute;
+    right: 8px;
+    top:35%;
+}
+.features .item:last-child{
+    border-bottom: none;
+}
+.out{
+    font-size: 34rpx;
+    line-height: 100rpx;
+    text-align: center;
+    background-color: white;
+}
+
+
+
+
+

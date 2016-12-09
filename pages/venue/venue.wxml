@@ -1,0 +1,47 @@
+<import src="/pages/template/layout/venueItem/venueItem.wxml" />
+<view class="page">
+  <scroll-view scroll-y="true" style="height:100% ;"  bindscrolltolower="loadMore">
+    <view class="search">
+        <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}" class="search-address">
+            <view class="picker">{{array[index]}}<text style="color:white;">∨</text></view>
+        </picker>
+        <form bindsubmit="formSubmit" class="search-form">
+            <icon type="search" size="15"></icon>
+            <input type="text" placeholder="输入关键字" class="search-input" />
+        </form>
+    </view>
+    <swiper indicator-dots="{{indicatorDots}}"  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class="slider-box">
+        <block wx:for="{{imgUrls}}" wx:key="id">
+            <swiper-item>
+               <image src="{{item.src}}" class="slide-image" />
+            </swiper-item>
+        </block> 
+    </swiper>
+    <view class="sport-zl">
+      <block wx:for="{{sports}}" wx:key="id">
+        <text  class="{{item.active?'active':''}}" bindtap="switchSport" data-id="{{item.id}}">{{item.name}}</text>
+      </block>
+    </view>
+    <view class="section date-time">
+         <picker mode="date" value="{{date}}" start="2016-12-01" end="2017-09-01" bindchange="bindDateChange">
+            <view class="picker date">{{date}}<image src="../../images/icon_data.png"></image></view>
+        </picker>
+        <picker mode="time" value="{{time}}" start="06:00" end="22:00" bindchange="bindTimeChange">
+            <view class="picker time">{{time}}<image src="../../images/icon_clock.png"></image></view>
+        </picker>
+        <!--button 使用type=""后，wxss设置背景色无效-->
+        <button type="primary" size="default" bindtap="primary"> 找场馆 </button>    
+    </view>
+    <view class="allVenue">
+        <text class="title">所有场馆</text>
+      
+        <block wx:for="{{venueList}}" wx:key="id">
+            <navigator class="venue" bindtap="enterDetail" data-id="{{item.id}}" url="detail/detail?id={{item.id.length>1?5:item.id}}">
+                <template is="venueItem" data="{{...item}}"/>
+                <image src="../../images/icon_best.png"  class="{{item.recommend?'recommend':''}} tuijian"></image>
+            </navigator>
+        </block>
+      
+    </view>
+    </scroll-view>
+<view>

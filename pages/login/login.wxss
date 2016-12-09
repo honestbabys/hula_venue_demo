@@ -1,0 +1,88 @@
+/* pages/login/login.wxss */
+@import "../template/toastTemp/toast.wxss" ;
+page{
+    height: 100%;
+}
+.page{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: #ffffff;
+}
+.btns{
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid #ccc;
+    /* padding:0 20rpx;*/
+}
+.btns text{
+    display: block;
+    width: 50%;
+    line-height: 80rpx;
+    text-align: center;
+}
+.btns text.active{
+    border-bottom: 2px solid #0396eb;
+}
+.placeholder{
+    font-family: "微软雅黑";
+    font-size: 30rpx;
+}
+input,.sex{
+    padding: 20rpx 35rpx;
+    border-bottom: 1px solid #ccc;
+    font-family: "微软雅黑";
+}
+.btn{
+    width: 80%;
+    margin-top:40rpx;
+    background: #0396eb;
+    color: white;
+}
+.code{
+    position: relative;
+}
+.code text{
+    position: absolute;
+    top:24rpx;
+    right: 35rpx;
+    font-size:24rpx;
+    border:1px solid #0396eb;
+    padding:2px 4px;
+    border-radius:4px;
+    z-index: 2;     /* 绑定了事件， 记得要设置z-index，否则触发不了 */
+}
+.sex{
+    overflow: hidden;
+}
+.job{
+    padding-left: 35rpx;
+    padding-top:20rpx;
+}
+ .label-2{
+    margin-bottom: 15px;
+}
+ .label-2__text {
+    display: inline-block;
+    vertical-align: middle;
+}
+.label-2__icon {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+    width: 18px;
+    height: 18px;
+    background: #cccccc;
+    border-radius: 50px;
+}
+
+.label-2__icon-checked {
+    position: absolute;
+    left: 3px;
+    top: 3px;
+    width: 12px;
+    height: 12px;
+    background: #1aad19;
+    border-radius: 50%;
+}

@@ -1,0 +1,59 @@
+
+<!--pages/login/login.wxml  catchtap="onLoginBtn" bindinput="getRegisterTel"-->
+<import src="../template/toastTemp/toast.wxml" />
+<view class="page">
+  <view class="btns">
+    <text class="login {{login?'active':''}}" catchtap="onLoginActive">登录</text>
+    <text class="register {{login?'':'active'}}" catchtap="onRegisterActive">注册</text>
+  </view>
+  <view class="login-form" wx:if="{{login}}">
+    <form bindsubmit="formSubmit" bindreset="formReset">
+      <view class="user-name">
+        <input type="number" name="loginTelephone" placeholder="手机号" maxlength="11" placeholder-class="{{placeholder}}" />
+      </view>
+      <view class="password">
+        <input password name="loginPassword" placeholder="密码" placeholder-class="{{placeholder}}" />
+      </view>
+      <button class="btn" formType="submit">登录</button>
+    </form>
+    <text style="font-size:24rpx;  padding-left:35rpx;">提示：账号15555555555，密码123456</text>
+  </view>
+  <view class="regis-form" wx:else>
+    <form bindsubmit="formSubmit2" bindreset="formReset2">
+      <view class="user-name">
+        <input type="number" name="telephone" placeholder="手机号"  catchblur="testTel" maxlength="11" placeholder-class="{{placeholder}}" />
+      </view>
+      <view class="password">
+        <input password name="password" placeholder="密码"   placeholder-class="{{placeholder}}" />
+      </view>
+      <view class="password">
+        <input password name="password2" placeholder="确认密码" placeholder-class="{{placeholder}}" />
+      </view>
+      <view class="code">
+        <input type="number" name="code" placeholder="验证码" placeholder-class="{{placeholder}}" value="{{code?code:''}}" />
+        <text catchtap="getRegisterCode">获取验证码</text>
+      </view>
+      <view class="sex">
+        <label for="male" class="flt">男</label>
+        <switch type="switch" id="male" name="sex" class="frt" />
+      </view>
+      <view class="job">
+        <view class="job__title">职业：</view>
+        <!--radio设置了hidden，点击lable（即文字）才会选中，点击圆点不会-->
+        <radio-group class="group" bindchange="radioChange">
+          <view class="label-2" wx:for="{{radioItems}}" wx:key="name">
+            <radio id="{{item.name}}" hidden value="{{item.name}}" checked="{{item.checked}}" name="job"></radio>
+            <view class="label-2__icon">
+              <view class="label-2__icon-checked" style="opacity:{{item.checked ? 1: 0}}"></view>
+            </view>
+            <label class="label-2__text" for="{{item.name}}">
+              <text>{{item.value}}</text>
+            </label>
+          </view>
+        </radio-group>
+      </view>
+      <button class="btn" formType="submit">注册</button>
+    </form>
+  </view>
+</view>
+<template is="toastTemp" data="{{...toastOptions}}" />

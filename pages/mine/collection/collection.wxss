@@ -1,0 +1,28 @@
+/* pages/mine/collection/collection.wxss */
+@import '/pages/template/layout/venueItem/venueItem.wxss';
+.options{
+   padding: 0rpx 32rpx;
+   background: #ffffff;
+   margin-bottom: 30rpx;
+}
+.options text{
+   display: inline-block;
+   width: 50%;
+   height: 80rpx;
+   box-sizing: border-box;
+   line-height: 80rpx;
+   text-align: center;
+   font-size:40rpx;
+
+}
+.options text.active{
+    color: #0396eb;
+    border-bottom:2px solid #0396eb;
+}
+.allVenue {
+    display: none;
+}
+.venueActive,.courseActive{
+    display: block;
+}
+

@@ -1,0 +1,46 @@
+
+<view class="page">
+    <view class="search">
+        <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}" class="search-address">
+            <view class="picker">{{array[index]}}<text style="color:white;">∨</text></view>
+        </picker>
+        <form bindsubmit="formSubmit" class="search-form">
+            <icon type="search" size="15" ></icon>
+            <input type="text" placeholder="输入关键字" class="search-input " />
+        </form>
+    </view>
+    <view class="banner">
+        <image src="/images/banner.png"></image>
+    </view>
+    <!--低价课程-->
+    <view class="low-course">
+        <text class="title">低价课程</text>
+        <scroll-view  class="low-course-list" scroll-x='true' style="width:100%;">
+            <!--<block wx:for="{{lowCourseList}}" wx:key="id">-->
+                <view class="low-course-item" wx:for="{{lowCourseList}}" wx:key="id">
+                    <image src="{{item.src}}"></image>
+                    <text class="title">{{item.title}}</text>
+                    <view class="price">
+                        <text class="new">￥{{item.newPrice}}</text><text class="old">￥{{item.oldPrice}}</text>
+                    </view>
+                </view>
+            <!--</block>-->
+        </scroll-view>
+    </view>
+    <!--所有课程-->
+       <view class="allCourse">
+            <text class="title">所有课程</text>     
+            <block wx:for="{{allCourseList}}" wx:key="id">
+                <view class="course {{item.recommend?'recommend':''}}" bindtap="enterDetail" data-id="{{item.id}}">
+                    <view class="course-image-box"><image src="{{item.src}}" class="course-img"></image></view>
+                    <view class="course-intro">
+                        <text class="course-title">{{item.title}}</text>
+                        <text class="course-address">{{item.address}}</text>    
+                        <view class="course-price">
+                            <text class="hui">惠</text><text class="zhe">全场9折</text><text class="price" >￥{{item.price}}</text>
+                        </view>
+                    </view>
+                </view>
+            </block>      
+       </view>
+</view>

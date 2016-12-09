@@ -1,0 +1,29 @@
+<view class="page">
+    <view class="userinfo">
+        <image  class="avatar" src="/images/icon_picbig@2x.png"></image>
+        <view class="info">
+            <text>{{userName}}</text><text>{{telephone}}</text>
+        </view>
+    </view>
+    <view class="collection">
+        <navigator url="" class="item">
+            <image src="/images/icon_mess@3x.png"></image>
+            <text>我的消息{{collection.newsNum}}</text>
+        </navigator>
+         <navigator class="item">
+            <image src="/images/icon_card@2x.png"></image>
+            <text>我的卡券{{collection.newsNum}}</text>
+        </navigator>
+         <navigator class="item" url="collection/collection">  <!--navigator 路径不需要后缀-->
+            <image src="/images/icon_save@2x.png"></image>
+            <text>我的收藏{{collection.newsNum}}</text>
+        </navigator>
+    </view>
+    <view class="features">
+        <navigator  wx:for="{{featuresList}}" wx:key="name" class="item" url="{{item.url}}?orderId=orderId_73475872347573" 
+        hover-class="navigator-hover">{{item.name}}
+            <image src="../../images/icon_next_normal.png"></image>
+        </navigator >
+    </view>
+    <view class="out" bindtap="outEnter">退出登录</view>
+</view>

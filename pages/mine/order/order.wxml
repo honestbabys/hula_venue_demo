@@ -1,0 +1,21 @@
+<view class="page">
+    <!--<scroll-view scroll-y="true" bindscrolltolower="loadMore" bindscrolltoupper="upRefresh" style="height:100%;">-->
+      <scroll-view scroll-y="true" bindscrolltolower="loadMore"  style="height:100%;">
+        <view class="order" wx:for="{{myOrders}}" wx:key="id">
+            <view class="address-state">
+                <text class="address flt">{{item.address}}</text><text class="state frt">{{item.state}}</text>
+            </view>
+            <view class="field">
+                <text class="sport">{{item.sport}}</text>
+                <block wx:for="{{item.fields}}" wx:key="fieldName" wx:for-item="field">
+                    <text class="time">{{field.time}}</text>
+                    <text class="fieldName">{{field.fieldName}}</text>
+                </block>
+                
+            </view>
+            <view class="price">
+                <text>总价：{{item.totalPrice}}元</text>
+            </view>
+        </view>
+    </scroll-view>
+</view>
